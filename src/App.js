@@ -7,18 +7,23 @@ import Header from './components/Header';
 import Slider from './components/Slider';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
-import SeccionPruebas from './components/SeccionPruebas';
+// import SeccionPruebas from './components/SeccionPruebas';
+import Peliculas from './components/Peliculas';
 
 function App() {
+  var buttonString = "Ver más";
 
   return (
     <div className="App">
       <Header />
-      <Slider />
+      <Slider
+        title="Bienvenido al Blog con React"
+        btn={buttonString}
+      />
 
       <div className="center">
 
-        <SeccionPruebas />
+        <Peliculas />
         <Sidebar />
         <div className="clearfix"></div>
 
