@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Moment from 'react-moment';
+import 'moment/locale/es';
 import Global from '../Global';
 import ImageDefault from '../assets/images/default.png';
 
@@ -34,7 +36,7 @@ class Articles extends Component {
                 return (
                     <article className="article-item" id="article-template">
                         <div className="image-wrap">
-                            {article.image !== null
+                            {article.image != null
                                 ? (<img src={this.url + 'get-image/' + article.image} alt={article.title} />)
                                 : (<img src={ImageDefault} alt={article.title} />)
                             }
@@ -42,7 +44,7 @@ class Articles extends Component {
 
                         <h2>{article.title}</h2>
                         <span className="date">
-                            {article.date}
+                            <Moment locale='es' fromNow>{article.date}</Moment>
                         </span>
                         <a href="/">Leer más</a>
 
