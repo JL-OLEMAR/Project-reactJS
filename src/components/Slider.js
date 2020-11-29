@@ -3,9 +3,12 @@ import React, { Component } from 'react';
 class Slider extends Component {
     render() {
         return (
-            <div id="slider" className="slider-big">
+            <div id="slider" className={this.props.size}>
                 <h1>{this.props.title}</h1>
-                <a href="dsd" className="btn-white">{this.props.btn}</a>
+
+                {this.props.btn &&
+                    <a href="dsd" className="btn-white">{this.props.btn}</a>
+                }
             </div>
         );
     }

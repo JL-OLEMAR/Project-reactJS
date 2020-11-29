@@ -86,9 +86,12 @@ body {
 }
 
 
-#menu a:hover,
+#menu a:hover{
+  color: #3cb2d3;
+}
+
 .active{
-  color: #3cb2d3 !important;
+  border-bottom: 2px solid #3cb2d3;
 }
 
 #slider{

@@ -18,7 +18,7 @@ class Pelicula extends Component {
 
                 <h2>{titulo}</h2>
                 <span className="date"> Hace 5 minutos </span>
-                <a href="#">Leer más</a>
+                <a href="/">Leer más</a>
                 <button onClick={this.marcar}>Marcar como favorita</button>
 
                 <div className="clearfix"></div>
