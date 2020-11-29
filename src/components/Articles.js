@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Moment from 'react-moment';
 import 'moment/locale/es';
@@ -15,7 +16,24 @@ class Articles extends Component {
     }
 
     componentWillMount() {
-        this.getArticles();
+        var home = this.props.home;
+
+        if (home === 'true') {
+            this.getLastArticles();
+        } else {
+            this.getArticles();
+        }
+    }
+
+    getLastArticles = () => {
+        axios.get(this.url + "articles/last")
+            .then(res => {
+                this.setState({
+                    articles: res.data.articles,
+                    status: 'success'
+                });
+                console.log(this.state);
+            });
     }
 
     getArticles = () => {
@@ -25,7 +43,6 @@ class Articles extends Component {
                     articles: res.data.articles,
                     status: 'success'
                 });
-                console.log(this.state);
             });
     }
 
@@ -46,7 +63,7 @@ class Articles extends Component {
                         <span className="date">
                             <Moment locale='es' fromNow>{article.date}</Moment>
                         </span>
-                        <a href="/">Leer más</a>
+                        <Link to={'/blog/articulo/' + article._id}>Leer más</Link>
 
                         <div className="clearfix"></div>
                     </article>
