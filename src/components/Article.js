@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-// import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Moment from 'react-moment';
 import 'moment/locale/es';
 import ImageDefault from '../assets/images/default.png';
 import Global from '../Global';
 import Sidebar from './Sidebar';
-
 
 class Article extends Component {
 
@@ -65,8 +64,8 @@ class Article extends Component {
                                 {article.content}
                             </p>
 
-                            <a href="/" className="btn btn-danger">Editar</a>
-                            <a href="/" className="btn btn-warning">Eliminar</a>
+                            <Link to="/blog" className="btn btn-danger">Editar</Link>
+                            <Link to="/blog" className="btn btn-warning">Eliminar</Link>
 
                             <div className="clearfix"></div>
                         </article>
