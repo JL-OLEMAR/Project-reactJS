@@ -230,6 +230,11 @@ body {
   overflow: hidden;
 }
 
+.text-danger{
+  color: rgb(201, 21, 21);
+  font-weight: bold;
+}
+
 .buttons{
   margin-top: 30px;
 }
@@ -266,6 +271,15 @@ textarea:focus{
 
 input[type="submit"]{
   margin-top: 10px;
+}
+
+.thumb{
+  display: block;
+  width: 170px;
+  float: left;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 textarea{
